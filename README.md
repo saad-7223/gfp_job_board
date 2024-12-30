@@ -68,3 +68,50 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Job Board : 
+
+<ul>
+    <li>The page should show 6 jobs on initial load with a button to load more postings.</li>
+    <li>Clicking on the "Load more" button will load the next page of 6 postings.</li>
+    <li>The button does not appear if there aren't any more postings to load.</li>
+    <li>If there's a url field returned for the job details, make the job title a link that opens the job details page in a new window when clicked.</li>
+    <li>
+The timestamp can be formatted in any way you like.</li>
+</ul></br>
+
+# API:
+Hacker News has a public API to fetch jobs by Y Combinator companies. There's no single API that fetches a list of jobs together with the data, so you will have to make separate requests to fetch the necessary data and combine them to be displayed.
+
+## Job Stories
+Fetches a list of job posting IDs.
+
+URL: https://hacker-news.firebaseio.com/v0/jobstories.json<br>
+HTTP Method: GET<br>
+Content Type: json<br>
+## `Sample response:`
+
+[35908337, 35904973, 35900922, 35893439, 35890114, 35880345, ...]
+
+## Job Details
+Fetches job posting details given its ID.
+
+URL: https://hacker-news.firebaseio.com/v0/item/{id}.json<br>
+HTTP Method: GET<br>
+Content Type: json<br>
+
+## `Sample response` for : 
+https://hacker-news.firebaseio.com/v0/item/35908337.json:
+
+{
+  "by": "jamilbk",<br>
+  "id": 35908337,<br>
+  "score": 1,<br>
+  "time": 1683838872,<br>
+  "title": "Firezone (YC W22) is hiring Elixir and Rust engineers",<br>
+  "type": "job",<br>
+  "url": "https://www.ycombinator.com/companies/firezone/jobs"<br>
+}
+
+## PROJECT QUESTION FROM :<br>
+Source : https://www.greatfrontend.com/
